@@ -1,0 +1,9 @@
+C:\Users\misha\source\repos\CoolParking\CoolParking\CoolParking.WebAPI\obj\Debug\net5.0\CoolParking.WebAPI.csproj.AssemblyReference.cache
+C:\Users\misha\source\repos\CoolParking\CoolParking\CoolParking.WebAPI\obj\Debug\net5.0\CoolParking.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\misha\source\repos\CoolParking\CoolParking\CoolParking.WebAPI\obj\Debug\net5.0\CoolParking.WebAPI.AssemblyInfoInputs.cache
+C:\Users\misha\source\repos\CoolParking\CoolParking\CoolParking.WebAPI\obj\Debug\net5.0\CoolParking.WebAPI.AssemblyInfo.cs
+C:\Users\misha\source\repos\CoolParking\CoolParking\CoolParking.WebAPI\obj\Debug\net5.0\CoolParking.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\misha\source\repos\CoolParking\CoolParking\CoolParking.WebAPI\obj\Debug\net5.0\CoolParking.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\misha\source\repos\CoolParking\CoolParking\CoolParking.WebAPI\obj\Debug\net5.0\CoolParking.WebAPI.dll
+C:\Users\misha\source\repos\CoolParking\CoolParking\CoolParking.WebAPI\obj\Debug\net5.0\ref\CoolParking.WebAPI.dll
+C:\Users\misha\source\repos\CoolParking\CoolParking\CoolParking.WebAPI\obj\Debug\net5.0\CoolParking.WebAPI.pdb

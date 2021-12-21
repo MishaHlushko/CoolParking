@@ -32,7 +32,7 @@ namespace CoolParking
         static string GetNormalStringOfTransactions()
         {
             string rez = "";
-            TransactionInfoClient[] transactionInfos = ParkingServiceHTTPMethods.GetLastTransactions().Result;
+            TransactionInfoClient[] transactionInfos = ParkingServiceHTTP.GetLastTransactions().Result;
             for (int i = 0; i < transactionInfos.Length; i++)
             {
                 rez += $"{transactionInfos[i].TimeTransaction:T} -- {transactionInfos[i].VehicleId}  {transactionInfos[i].Sum}\n";
@@ -49,19 +49,19 @@ namespace CoolParking
                 switch (number)
                 {
                     case "1":
-                        Console.WriteLine($"Current balance is {ParkingServiceHTTPMethods.GetParkingHttp("balance").Result}\n");
+                        Console.WriteLine($"Current balance is {ParkingServiceHTTP.GetParkingHttp("balance").Result}\n");
                         break;
                     case "2":
-                        Console.WriteLine($"The capacity of the parking is {ParkingServiceHTTPMethods.GetParkingHttp("capacity").Result}\n");
+                        Console.WriteLine($"The capacity of the parking is {ParkingServiceHTTP.GetParkingHttp("capacity").Result}\n");
                         break;
                     case "3":
-                        Console.WriteLine($"Amount free place of parking is {ParkingServiceHTTPMethods.GetParkingHttp("freePlaces").Result}");
+                        Console.WriteLine($"Amount free place of parking is {ParkingServiceHTTP.GetParkingHttp("freePlaces").Result}");
                         break;
                     case "4":
                         Console.WriteLine($"The history of transactions for current period is {GetNormalStringOfTransactions()}");
                         break;
                     case "5":
-                        ReadOnlyCollection<VehicleClient> clients = new ReadOnlyCollection<VehicleClient>(ParkingServiceHTTPMethods.GetVehicles().Result);
+                        ReadOnlyCollection<VehicleClient> clients = new ReadOnlyCollection<VehicleClient>(ParkingServiceHTTP.GetVehicles().Result);
                         for (int i = 0; i < clients.Count; i++)
                             Console.Write(clients[i].Id + " with balance " + clients[i].Balance + "\n");
                         break;
@@ -73,14 +73,14 @@ namespace CoolParking
                         int type = Convert.ToInt32(Console.ReadLine());
                         decimal money = Convert.ToDecimal(Console.ReadLine());
                         VehicleClient vehicle = new VehicleClient(id, type, money);
-                        string rez = ParkingServiceHTTPMethods.AddVehicle(vehicle).Result;
+                        string rez = ParkingServiceHTTP.AddVehicle(vehicle).Result;
                         Console.WriteLine($"{rez}\n");
                         break;
 
                     case "7":
                         Console.WriteLine("Enter the id of transport you want to remove:");
                         string idRemove = Console.ReadLine();
-                        string rezRev = ParkingServiceHTTPMethods.RemoveVehicle(idRemove).Result;
+                        string rezRev = ParkingServiceHTTP.RemoveVehicle(idRemove).Result;
                         Console.WriteLine(rezRev + "\n");
                         break;
 
@@ -88,19 +88,19 @@ namespace CoolParking
                         Console.WriteLine("Enter sum and id of transport:");
                         decimal sum = Convert.ToDecimal(Console.ReadLine());
                         string ids = Console.ReadLine();
-                        VehicleClient rezTopUp = ParkingServiceHTTPMethods.TopUpVehicle(ids, sum).Result;
+                        VehicleClient rezTopUp = ParkingServiceHTTP.TopUpVehicle(ids, sum).Result;
                         Console.WriteLine($"Now {rezTopUp.Id} is staying on parking with balance {rezTopUp.Balance}\n");
                         break;
 
                     case "9":
                         Console.WriteLine("Enter the id of transport:");
                         string IdTr = Console.ReadLine();
-                        VehicleClient rezGet = ParkingServiceHTTPMethods.GetVehicleById(IdTr).Result;
+                        VehicleClient rezGet = ParkingServiceHTTP.GetVehicleById(IdTr).Result;
                         Console.WriteLine($"Vehicle with id {rezGet.Id} with balance {rezGet.Balance} is staying now on the parking\n");
                         break;
 
                     case "10":
-                        Console.WriteLine(ParkingServiceHTTPMethods.GetAllTransactions().Result);
+                        Console.WriteLine(ParkingServiceHTTP.GetAllTransactions().Result);
                         break;
 
                     case "11":
